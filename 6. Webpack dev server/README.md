@@ -1,6 +1,6 @@
 ![Webpack từ A đến Á cùng kentrung](https://images.viblo.asia/2090b88e-6ec0-49fe-b677-65e927fafc2e.png) 
 
-Ở bài [trước](https://viblo.asia/p/webpack-tu-a-den-a-webpack-watch-mode-Qbq5Qm1m5D8) chúng ta đã học về chế độ watch mode để webpack có thể tự động build lại nếu có thay đổi code. Bài hôm nay chúng ta sẽ học cách tạo một **web server** đơn giản tại địa chỉ **localhost:8080** và tự động reload thông qua `webpack-dev-server`
+Ở bài trước chúng ta đã học về chế độ watch mode để webpack có thể tự động build lại nếu có thay đổi code. Bài hôm nay chúng ta sẽ học cách tạo một **web server** đơn giản tại địa chỉ **localhost:8080** và tự động reload thông qua `webpack-dev-server`
 
 ## 1. Chuẩn bị file
 Code file `webpack.config.js` ban đầu
