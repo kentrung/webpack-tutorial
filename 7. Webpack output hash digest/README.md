@@ -15,21 +15,6 @@ module.exports = {
   }
 }
 ```
-Tạo file `dist/index.html`
-```
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Webpack từ A đến Á cùng kentrung</title>
-</head>
-<body>
-  <h1>Webpack từ A đến Á cùng kentrung</h1>
-  <script src="main.js"></script>
-</body>
-</html>
-``` 
 Tạo file `src/index.js`
 ```
 console.log('Hello World!')
