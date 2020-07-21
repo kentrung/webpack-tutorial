@@ -21,7 +21,7 @@ console.log('Hello World!')
 ```
 
 ## 2. Thêm output hash trong webpack config
-Các bạn mở file `webpack.config.js` và thêm giá trị hash vào chỗ output như này nhé
+Các bạn mở file `webpack.config.js` và thêm giá trị hash vào chỗ output > filename như này nhé
 ```
 module.exports = {
   entry: './src/index.js',
