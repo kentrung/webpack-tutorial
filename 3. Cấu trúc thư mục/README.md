@@ -32,5 +32,11 @@ webpack-demo
   |- src/
   |- webpack.config.js
 ```
-Vậy là cơ bản đã setup xong cấu trúc thư mục của dự án. Bài viết đến đây là hết. Hẹn gặp lại các bạn ở bài viết tiếp theo.
-* Sourcode github: [https://github.com/kentrung/webpack-tutorial](https://github.com/kentrung/webpack-tutorial)
+Vậy là cơ bản đã setup xong cấu trúc thư mục của dự án. 
+
+
+-----
+
+
+Bài viết đến đây là hết, hi vọng với bài viết này các bạn đã thêm được nhiều kiến thức bổ ích. Hẹn gặp lại các bạn ở bài viết tiếp theo.
+* Source code github: https://github.com/kentrung/webpack-tutorial
