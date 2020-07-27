@@ -33,4 +33,4 @@ Với cách thứ hai chúng ta set giá trị `--watch` vào scripts > dev. V�
 Bài viết đến đây là hết, hi vọng với bài viết này các bạn đã thêm được nhiều kiến thức bổ ích. Hẹn gặp lại các bạn ở bài viết tiếp theo.
 
 * Tham khảo thêm về chế độ **Watch and WatchOptions** tại: https://webpack.js.org/configuration/watch/
-* Sourcode github: https://github.com/kentrung/webpack-tutorial
+* Source code github: https://github.com/kentrung/webpack-tutorial
