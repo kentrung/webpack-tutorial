@@ -4,7 +4,7 @@ Bài hôm nay chúng ta sẽ tìm hiểu về **output hash digest**. Nếu như
 
 ## 1. Chuẩn bị file
 Code file `webpack.config.js` ban đầu
-```
+```js
 const path = require('path')
 
 module.exports = {
@@ -16,13 +16,13 @@ module.exports = {
 }
 ```
 Tạo file `src/index.js`
-```
+```js
 console.log('Hello World!')
 ```
 
 ## 2. Thêm output hash trong webpack config
 Các bạn mở file `webpack.config.js` và thêm giá trị hash vào chỗ output > filename như này nhé
-```
+```js
 module.exports = {
   entry: './src/index.js',
   output: {
@@ -35,7 +35,7 @@ Khi chạy lại câu lệnh `npm run dev` chúng ta sẽ thấy file js đượ
 
 ## 3. Độ dài của chuỗi hash
 Mặc định khi thêm hash vào thì độ dài chuỗi này sẽ là **20 kí tự** nếu bạn thấy dài thì có thể thay đổi được bằng cách thêm số đằng sau. Ví dụ dưới đây mình chỉ tạo chuỗi hash dài **6 kí tự**
-```
+```js
 module.exports = {
   entry: './src/index.js',
   output: {
@@ -53,5 +53,5 @@ File output build ra sẽ trông dạng như thế này `dist/main.f24fea.js`
 
 
 Bài viết đến đây là hết, hi vọng với bài viết này các bạn đã thêm được nhiều kiến thức bổ ích. Hẹn gặp lại các bạn ở bài viết tiếp theo.
-* Tham khảo thêm về output hash digest tại đây: [https://webpack.js.org/configuration/output/#outputhashdigest](https://webpack.js.org/configuration/output/#outputhashdigest)
-* Sourcode github: [https://github.com/kentrung/webpack-tutorial](https://github.com/kentrung/webpack-tutorial)
+* Tham khảo thêm về output hash digest tại: https://webpack.js.org/configuration/output/#outputhashdigest
+* Source code github: https://github.com/kentrung/webpack-tutorial
