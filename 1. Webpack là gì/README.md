@@ -1,8 +1,8 @@
-![](https://images.viblo.asia/2090b88e-6ec0-49fe-b677-65e927fafc2e.png) <br>
+![Webpack từ A đến Á cùng kentrung](https://images.viblo.asia/2090b88e-6ec0-49fe-b677-65e927fafc2e.png) <br>
 Chào mừng bạn đã đến với series **Webpack từ A đến Á cùng kentrung**. Đây là bài viết đầu tiên chúng ta cùng nhau tìm hiểu về Webpack và lí do tại sao nên dùng. Đây dù sao cũng chỉ là những kiến thức trong quá trình tìm hiểu và làm dự án thực tế mà mình đúc rút ra và chia sẻ cho anh em. Nếu có gì thiếu sót hoặc sai sót chỗ nào rất mong nhận được những lời đánh giá sửa sai từ các bạn.
 ## 1. Webpack là gì?
-Webpack hiểu đơn giản là một công cụ giúp chúng ta đóng gói (bundle) tất cả js, css, image, font... thành một file hoặc nhiều file theo cách có tổ chức, gọn gàng, sạch sẽ, thơm tho.  <br>
-Link trang chủ của webpack: [https://webpack.js.org/](https://webpack.js.org/)
+* Webpack hiểu đơn giản là một công cụ giúp chúng ta đóng gói (bundle) tất cả js, css, image, font... thành một file hoặc nhiều file theo cách có tổ chức, gọn gàng, sạch sẽ, thơm tho.
+* Link trang chủ của webpack: [https://webpack.js.org/](https://webpack.js.org/)
 ## 2. Tại sao phải sử dụng webpack?
 Có khá nhiều lí do để bạn quan tâm những lợi ích mà nó mang lại
 * Đóng gói nhiều file Javascript, CSS thành một file duy nhất, điểm đặc biệt là webpack sẽ tổ chức nội dung trong các file một cách khoa học hợp lí
