@@ -3,7 +3,7 @@
 Ở bài trước chúng ta đã test thành công webpack và kết quả hết sức mĩ mãn. Giờ vấn đề tiếp theo xảy ra là nếu thay đổi code trong file `src/index.js` như thay đổi chữ đỏ sang xanh thì sao? Chúng ta sẽ phải chạy lại câu lệnh `npm run dev` để build lại, quả thật là mất thời gian. Webpack thấu hiểu điều đó và đã cung cấp cho chúng ta **option watch mode** (chế độ theo dõi). Watch mode là cách thiết lập để webpack có thể tự động build lại nếu có thay đổi từ các file nguồn. 
 
 ## Cách 1. Watch mode trong webpack.config.js
-```
+```js
 module.exports = {
   ...
   watch: true
@@ -16,7 +16,7 @@ webpack is watching the files…
 ```
 
 ## Cách 2. Watch mode trong package.json
-```
+```json
 {
   ...
   "scripts": {
@@ -30,7 +30,7 @@ Với cách thứ hai chúng ta set giá trị `--watch` vào scripts > dev. V�
 
 -----
 
-Bài viết đến đây là hết. Hẹn gặp lại các bạn ở bài viết tiếp theo.
+Bài viết đến đây là hết, hi vọng với bài viết này các bạn đã thêm được nhiều kiến thức bổ ích. Hẹn gặp lại các bạn ở bài viết tiếp theo.
 
-* Tham khảo thêm về chế độ **Watch and WatchOptions** tại: [https://webpack.js.org/configuration/watch/](https://webpack.js.org/configuration/watch/)
-* Sourcode github: [https://github.com/kentrung/webpack-tutorial](https://github.com/kentrung/webpack-tutorial)
+* Tham khảo thêm về chế độ **Watch and WatchOptions** tại: https://webpack.js.org/configuration/watch/
+* Sourcode github: https://github.com/kentrung/webpack-tutorial
