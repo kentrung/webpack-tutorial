@@ -4,8 +4,8 @@
 
 ## 1. Cài đặt NodeJS
 
-* Tùy thuộc vào hệ điều hành (HĐH) các bạn đang sử dụng mà lên trang download của NodeJS tải về bản tương ứng: [https://nodejs.org/en/download/](https://nodejs.org/en/download/)
-* Các bạn có thể tham khảo cách cài đặt tại: [https://vntalking.com/cai-dat-nodejs-tren-window-ubuntu.html](https://vntalking.com/cai-dat-nodejs-tren-window-ubuntu.html)
+* Tùy thuộc vào hệ điều hành (HĐH) các bạn đang sử dụng mà lên trang download của NodeJS tải về bản tương ứng: https://nodejs.org/en/download/
+* Các bạn có thể tham khảo cách cài đặt tại: https://vntalking.com/cai-dat-nodejs-tren-window-ubuntu.html
 
 ## 2. Cài đặt Webpack
 
@@ -133,4 +133,4 @@ Vậy là xong, cài đặt webpack không quá phức tạp phải không bro?
 Bài viết đến đây là hết, hi vọng với bài viết này các bạn đã thêm được nhiều kiến thức bổ ích. Hẹn gặp lại các bạn ở bài viết tiếp theo.
 
 * Bài viết tham khảo: https://webpack.js.org/guides/getting-started/#basic-setup
-* Sourcode github: https://github.com/kentrung/webpack-tutorial
+* Source code github: https://github.com/kentrung/webpack-tutorial
