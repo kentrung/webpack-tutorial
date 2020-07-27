@@ -16,7 +16,7 @@ webpack is watching the files…
 ```
 
 ## Cách 2. Watch mode trong package.json
-```json
+```
 {
   ...
   "scripts": {
