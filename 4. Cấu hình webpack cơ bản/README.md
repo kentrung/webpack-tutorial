@@ -1,8 +1,9 @@
 ![Webpack từ A đến Á cùng kentrung](https://images.viblo.asia/2090b88e-6ec0-49fe-b677-65e927fafc2e.png) 
 
 Ở bài trước chúng ta đã setup xong các thư mục của dự án như thư mục `src` để chứa code lúc phát triển, thư mục `dist` để chứa code lúc hoàn thiện, file `webpack.config.js` để cấu hình chạy webpack. Bài hôm nay sẽ bắt tay vào viết code để test xem nó đã chạy được chưa nhé.
+
 ## 1. Cấu hình file webpack.config.js
-```
+```js
 const path = require('path')
 
 module.exports = {
@@ -46,7 +47,7 @@ webpack-demo
 
 ```
 Và viết code bên trong gọi sẵn script `main.js`
-```
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -63,7 +64,7 @@ Lưu ý là trong folder dist này chúng ta mới chỉ tạo file html trong �
 
 ## 3. Tạo file index.js trong folder src
 Trong folder src ta tạo file `index.js` và viết đoạn code sau có tác dụng tìm thẻ html có **id = title** và cho chữ thành màu đỏ
-```
+```js
 const titleElement = document.querySelector('#title')
 titleElement.style.color = 'red'
 ```
@@ -80,14 +81,14 @@ The 'mode' option has not been set, webpack will fallback to 'production' for th
 You can also set it to 'none' to disable any default behavior. Learn more: https://webpack.js.org/configuration/mode/
 ```
 Chúng ta sẽ giải quyết vấn đề đó sau. Khi chạy lệnh trên xong bạn quay lại folder dist sẽ thấy có thêm file `main.js` và code bên trong quả thật lằng nhằng khó hiểu.
-```
+```js
 !function(e){var t={};function r(n){if(t[n])return t[n].exports;var o=t[n]={i:n,l:!1,exports:{}};return e[n].call(o.exports,o,o.exports,r),o.l=!0,o.exports}r.m=e,r.c=t,r.d=function(e,t,n){r.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:n})},r.r=function(e){"undefined"!=typeof Symbol&amp;&amp;Symbol.toStringTag&amp;&amp;Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},r.t=function(e,t){if(1&amp;t&amp;&amp;(e=r(e)),8&amp;t)return e;if(4&amp;t&amp;&amp;"object"==typeof e&amp;&amp;e&amp;&amp;e.__esModule)return e;var n=Object.create(null);if(r.r(n),Object.defineProperty(n,"default",{enumerable:!0,value:e}),2&amp;t&amp;&amp;"string"!=typeof e)for(var o in e)r.d(n,o,function(t){return e[t]}.bind(null,o));return n},r.n=function(e){var t=e&amp;&amp;e.__esModule?function(){return e.default}:function(){return e};return r.d(t,"a",t),t},r.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},r.p="",r(r.s=0)}([function(e,t){document.querySelector("#title").style.color="red"}]);
 ```
 Bây giờ bạn mở file `index.html` lên xem và thật là vi diệu chữ **Hello Webpack!** đã thành màu đỏ đúng như dự đoán. Easy right?
 
 ## 5. Cấu hình file package.json
 Ở phần trên chúng ta đã test webpack thành công bằng câu lệnh `npx webpack`. Vấn đề đặt ra là bây giờ chúng ta có thể nhớ dễ dàng câu lệnh trên nhưng nếu để lâu bạn sẽ không nhớ nổi là chạy câu lệnh gì để run webpack. Mỗi thư viện mỗi package lại có những câu lệnh run khác nhau, chính vì vậy chúng ta sẽ thiết lập một lối tắt nhỏ trong file `package.json` chỗ đoạn script > dev > webpack nhé
-```
+```js
 {
   ...
   "scripts": {
@@ -106,6 +107,6 @@ Giờ bạn hãy xóa file main.js cũ đi và test thử bằng câu lệnh `np
 -----
 
 
-Bài viết đến đây là hết. Hẹn gặp lại các bạn ở bài viết tiếp theo.
+Bài viết đến đây là hết, hi vọng với bài viết này các bạn đã thêm được nhiều kiến thức bổ ích. Hẹn gặp lại các bạn ở bài viết tiếp theo.
 
-* Sourcode github: [https://github.com/kentrung/webpack-tutorial](https://github.com/kentrung/webpack-tutorial)
+* Sourcode github: https://github.com/kentrung/webpack-tutorial
