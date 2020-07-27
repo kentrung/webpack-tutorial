@@ -4,7 +4,7 @@
 
 ## 1. Chuẩn bị file
 Code file `webpack.config.js` ban đầu
-```
+```js
 const path = require('path')
 
 module.exports = {
@@ -16,7 +16,7 @@ module.exports = {
 }
 ```
 Tạo file `dist/index.html`
-```
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,7 +31,7 @@ Tạo file `dist/index.html`
 </html>
 ``` 
 Tạo file `src/index.js`
-```
+```js
 console.log('Hello World!')
 ```
 Vậy là xong phần chuẩn bị, phần tiếp theo chúng ta bắt đầu tìm hiểu về **webpack-dev-server** là gì?
@@ -42,7 +42,7 @@ Vậy là xong phần chuẩn bị, phần tiếp theo chúng ta bắt đầu t�
 npm install webpack-dev-server --save-dev
 ```
 Sau khi cài đặt xong chúng ta thay đổi file cấu hình `webpack.config.js` để báo cho máy chủ dev biết nơi tìm tệp
-```
+```js
 const path = require('path')
 
 module.exports = {
@@ -78,5 +78,5 @@ Khi chạy xong câu lệnh trên thì tự động trình duyệt được bậ
 
 
 Bài viết đến đây là hết, hi vọng với bài viết này các bạn đã thêm được nhiều kiến thức bổ ích. Hẹn gặp lại các bạn ở bài viết tiếp theo!
-* Tham khảo thêm các cấu hình khác cho webpack-dev-server tại: [https://webpack.js.org/guides/development/#using-webpack-dev-server](https://webpack.js.org/guides/development/#using-webpack-dev-server)
-*  Sourcode github: [https://github.com/kentrung/webpack-tutorial](https://github.com/kentrung/webpack-tutorial)
+* Tham khảo thêm các cấu hình khác cho webpack-dev-server tại: https://webpack.js.org/guides/development/#using-webpack-dev-server
+*  Source code github: https://github.com/kentrung/webpack-tutorial
