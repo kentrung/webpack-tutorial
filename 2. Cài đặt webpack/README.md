@@ -107,7 +107,7 @@ webpack-demo
   |- package.json
 ```
 Mình chỉ cần quan tâm đến file `package.json` thôi và code bên trong sẽ như này.
-```
+```json
 {
   "name": "webpack-demo",
   "version": "1.0.0",
@@ -125,8 +125,12 @@ Mình chỉ cần quan tâm đến file `package.json` thôi và code bên trong
   }
 }
 ```
-Vậy là xong, cài đặt webpack không quá phức tạp phải không bro? Bài viết đến đây là hết. Hẹn gặp lại các bạn ở bài viết tiếp theo.
+Vậy là xong, cài đặt webpack không quá phức tạp phải không bro? 
 
 
-* Bài viết tham khảo: [https://webpack.js.org/guides/getting-started/#basic-setup](https://webpack.js.org/guides/getting-started/#basic-setup)
-* Sourcode github: [https://github.com/kentrung/webpack-tutorial](https://github.com/kentrung/webpack-tutorial)
+-----
+
+Bài viết đến đây là hết, hi vọng với bài viết này các bạn đã thêm được nhiều kiến thức bổ ích. Hẹn gặp lại các bạn ở bài viết tiếp theo.
+
+* Bài viết tham khảo: https://webpack.js.org/guides/getting-started/#basic-setup
+* Sourcode github: https://github.com/kentrung/webpack-tutorial
