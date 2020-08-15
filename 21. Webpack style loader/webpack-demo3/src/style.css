@@ -1,0 +1,4 @@
+ul {list-style: none;}
+ul li {display: inline-block; margin: 0 10px;}
+ul li a {color: #377ab7; text-decoration: none;}
+ul li a:hover {color: red;}
