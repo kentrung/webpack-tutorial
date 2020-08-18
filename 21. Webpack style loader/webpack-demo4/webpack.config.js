@@ -1,12 +1,7 @@
 const path = require('path')
 
 module.exports = {
-  entry: {
-    main: [
-      './src/style.css',
-      './src/index.js',
-    ]
-  },
+  entry: './src/index.js',
   output: {
     filename: '[name].js',
     path: path.resolve(__dirname, 'dist')
@@ -15,7 +10,10 @@ module.exports = {
     rules: [
       {
         test: /\.css$/i,
-        use: ['style-loader', 'css-loader'],
+        use: [
+          { loader: 'style-loader', options: { insert: 'body' } },
+          'css-loader',
+        ],
       },
     ],
   },

@@ -11,10 +11,10 @@ module.exports = {
       {
         test: /\.css$/i,
         use: [
-          { loader: 'style-loader', options: { insert: 'body' } },
-          'css-loader',
+          { loader: 'style-loader', options: { injectType: 'linkTag' } },
+          { loader: 'file-loader', options: { name: 'css/[name].[ext]' } },
         ],
       },
     ],
   },
-}
+} 
