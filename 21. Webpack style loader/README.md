@@ -36,7 +36,7 @@ Vậy là xong phần chuẩn bị, phần tiếp theo chúng ta bắt đầu t�
 
 ## 2. Webpack style-loader
 
-`style-loader` giúp chúng ta **Inject CSS into the DOM**, tác dụng chủ yếu là xác định vị trí chèn css trong html, để sử dụng chúng ta phải cài đặt nó thông qua npm (lưu ý là chúng ta nên kết hợp cùng với `css-loader`)
+`style-loader` giúp chúng ta **Inject CSS into the DOM**, tác dụng chủ yếu là xác định vị trí chèn css trong html bằng Javascript, để sử dụng chúng ta phải cài đặt nó thông qua npm (lưu ý là chúng ta nên kết hợp cùng với `css-loader`)
 ```
 npm install style-loader css-loader --save-dev
 ```
@@ -60,6 +60,8 @@ module.exports = {
   },
 }
 ```
+Đoạn code trên có ý nghĩa là tạo ra một rule (quy định) để test tất cả các file có đuôi là css. Nó sử dụng css-loader để chuyển css bạn viết ở trên thành css in js, sau đó đến style-loader xác định vị trí sẽ chèn vào trong file html. 
+
 Code file `src/index.js` và gọi file css ở trên vào
 ```js
 import './style.css'
@@ -76,10 +78,10 @@ Thế là xong phần cấu hình giờ chúng ta chạy webpack xem thế nào 
   </style>
 </head>
 ```
-Ta thấy phần code css giờ đã được tự động thêm vào trang html thông qua thẻ style trong khối head. **Thật là vi diệu!**
+Ta thấy phần code css giờ đã được Javascript chèn vào trang html thông qua thẻ style trong khối head. **Thật là vi diệu!**
 
 ## 3. Thêm css bằng Multiple file types per entry
-Ở mục 2 cách thêm css là gọi trực tiếp file css vào `src/index.js`. Ngoài cách này ra ta có thể dùng cách thêm css vào trong entry point. Code file `src/index.js` chúng ta xóa đoạn import đi, mình thay thế bằng đoạn code đơn giản này
+Ở mục 2 cách thêm css là gọi trực tiếp file css vào một file Javascript mục tiêu, ở đây chính là  `src/index.js`, ngoài cách này ra ta có thể dùng cách thêm css vào trong entry point. Code file `src/index.js` chúng ta xóa đoạn import đi, mình thay thế bằng đoạn code đơn giản này
 ```js
 console.log('index.js')
 ```
@@ -120,7 +122,7 @@ Thế là xong phần cấu hình giờ chúng ta chạy webpack xem thế nào 
   </style>
 </head>
 ```
-Ta thấy phần code css giờ đã được tự động thêm vào trang html thông qua thẻ style trong khối head. **Thật là vi diệu 2!**
+Ta thấy phần code css giờ lại được tự động thêm vào trang html thông qua thẻ style trong khối head. **Thật là vi diệu 2!**
 
 ## 4. Option injectType
 
@@ -135,7 +137,7 @@ Các giá trị khả thi:
 * lazySingletonStyleTag
 * linkTag
 
-`injectType` cho phép chúng ta thiết lập cách css được thêm vào trong html. Theo mặc định thì webpack sẽ chèn css vào trong thẻ style bên trong khối head cách này gọi là **internal CSS**.
+`injectType` cho phép chúng ta thiết lập cách css được thêm vào trong html. Theo mặc định thì webpack sẽ chèn css vào trong thẻ style bên trong khối head cách này gọi là **internal CSS** (styleTag).
 
 Một trong những cách khác để chèn css là dùng **external CSS** (linkTag) và gọi nó qua thẻ link trong khối head. Lưu ý khi dùng cách này bạn phải chắc chắn là đã có **file-loader**, nếu quên hoặc chưa biết tác dụng của nó thì bạn nên xem lại chút ở bài trước
 ```js
@@ -180,13 +182,15 @@ Giờ chúng ta chạy file `dist/index.html` và xem code trong F12 đã tự �
 </head>
 ...
 ```
+
+
 ## 5. Option insert
 
 | Name  | Type | Default | Description
 | -------- | -------- | -------- | --------
 | insert | String / Function | head | Inserts tag at the given position into the DOM
 
-Theo mặc định thì webpack sẽ chèn css vào khối **\<head>** nhưng với `insert` chúng ta có thể đặt nó vào vị trí nào mình muốn. Ví dụ với cấu hình này thì css sẽ được đặt ở dưới cùng trong khối **\<body>**
+Theo mặc định thì webpack sẽ chèn css vào khối **\<head>** nhưng với `insert` chúng ta có thể chèn css vào vị trí nào trên html mà mình muốn. Ví dụ với cấu hình này thì css sẽ được đặt ở dưới cùng trong khối **\<body>**
 ```js
 const path = require('path')
 
