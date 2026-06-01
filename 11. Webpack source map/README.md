@@ -1,10 +1,10 @@
 ![Webpack từ A đến Á cùng kentrung](https://images.viblo.asia/2090b88e-6ec0-49fe-b677-65e927fafc2e.png) 
 
-Khi webpack đóng gói mã nguồn của bạn, việc theo dõi lỗi hay cảnh báo có thể trở nên khó khăn. Ví dụ: nếu bạn có ba file nguồn `src/a.js` `src/b.js` và `src/c.js` ghép thành một file `bundle.js` và một trong các file nguồn có lỗi, chỗ thông báo lỗi sẽ chỉ đến bundle.js. Điều này không phải lúc nào cũng hữu ích vì bạn có thể muốn biết chính xác lỗi đến từ đâu, dòng bao nhiêu, file nào bị lỗi. Để cuộc sống dễ thở webpack cung cấp một số option giúp chúng ta dò tìm lỗi một cách dễ dàng đó là `inline source map` hoặc `mode development`
+Khi Webpack biên dịch và đóng gói code của bạn, việc theo dõi lỗi hay cảnh báo lỗi có thể trở nên khó khăn. Ví dụ: nếu bạn có ba file code `a.js` `b.js` và `c.js` ghép thành một file ouput `bundle.js`, nếu một trong các file đó có lỗi, chỗ thông báo lỗi sẽ chỉ đến `bundle.js`. Điều này không phải lúc nào cũng hữu ích vì bạn có thể muốn biết chính xác lỗi đến từ đâu, dòng bao nhiêu, file nào bị lỗi. Để cuộc sống dễ thở hơn Webpack cung cấp một số options giúp chúng ta dò tìm lỗi một cách dễ dàng đó là `inline source map` hoặc `development mode`
 
-## 1. Chuẩn bị file
-Code file `webpack.config.js` ban đầu:
-```javascript
+## 1. Chuẩn bị file và tình huống
+Các file code ban đầu:
+```js:webpack.config.js
 const path = require('path')
 
 module.exports = {
@@ -16,25 +16,25 @@ module.exports = {
 }
 ```
 File nguồn `src/index.js` mình cố tình code lỗi như này:
-```js
+```js:src/index.js
 function sum(a, b) {
   return a + b
 }
 console.log(kentrung)
 ```
-Easy ta thấy biến `kentrung` chưa hề được khai báo nên log ra sẽ báo lỗi. Mình cứ kệ và chạy webpack xem sao. 
+Dễ dàng ta thấy biến `kentrung` chưa hề được khai báo nên log ra sẽ báo lỗi ngay nhưng mình cứ kệ và chạy Webpack xem sao. 
 ```
 npm run dev
 ```
-Sau khi webpack build xong ta mở file `dist/index.html` và xem log ra sao. Kết quả báo lỗi như sau:
+Sau khi Webpack build xong ta mở file `dist/index.html` và xem log ra sao. Kết quả báo lỗi như sau:
 ```js
 Uncaught ReferenceError: kentrung is not defined at main.js:1
 ```
-Nó thông báo lỗi kiểu này thì bạn rất khó để biết được thực sự lỗi ở file nào, dòng nào luôn. Để dễ fix lỗi thì webpack cung cấp option **inline source map** hoặc **mode development.**
+Nó thông báo lỗi kiểu này thì bạn rất khó để biết được thực sự lỗi ở file nào, dòng nào luôn. Cùng mình tìm hiểu cách dò lỗi bên dưới thôi.
 
 ## 2. Chế độ inline source map
-Source map là cách thiết lập bản đồ nguồn, ánh xạ mã được biên dịch của bạn trở lại mã nguồn ban đầu. Nếu một lỗi bắt nguồn trong file `src/index.js` thì source map sẽ cho bạn biết chính xác vị trí lỗi. Thêm option này vào `webpack.config.js`
-```javascript
+Source map là cách thiết lập bản đồ nguồn, code đã được biên dịch sẽ được ánh xạ trở lại code nguồn ban đầu. Nếu có lỗi trong file `src/index.js` thì source map sẽ cho bạn biết chính xác vị trí lỗi. Thêm option này vào `webpack.config.js`
+```js:webpack.config.js
 const path = require('path')
 
 module.exports = {
@@ -47,14 +47,14 @@ module.exports = {
 }
 ```
 
-Khi thêm option này vào chúng ta dễ dàng biết được lỗi ở vị trí nào để mà f*ck lỗi (ý mình là fix lỗi ^^)
-```
+Khi thêm option này vào chúng ta dễ dàng biết được lỗi ở dòng nào để mà f*ck lỗi (ý mình là fix lỗi ^^)
+```js
 Uncaught ReferenceError: kentrung is not defined at index.js:4 
 ```
 
-## 3. Chế độ mode development
+## 3. Chế độ development
 Tốt nhất khi chúng ta đang trong quá trình viết code nên chọn chế độ **mode: development** để dễ dàng debug, theo dõi lỗi một cách dễ dàng. Thêm option này vào `webpack.config.js`
-```javascript
+```js:webpack.config.js
 const path = require('path')
 
 module.exports = {
@@ -67,11 +67,11 @@ module.exports = {
 }
 ```
 Khi thêm option này chúng ta cũng có kết quả tương tự như dùng **inline source map**
-```javascript
+```js
 Uncaught ReferenceError: kentrung is not defined at index.js:4 
 ```
 Ngoài ra khi ta thêm option này thì ở màn hình `cmd` cũng mất luôn cảnh báo của webpack mà nó cứ nhắc mình suốt ngày
-```javascript
+```
 WARNING in configuration
 The 'mode' option has not been set, webpack will fallback to 'production' for this value. Set 'mode' option to 'development' or 'production' to enable defaults for each environment.
 You can also set it to 'none' to disable any default behavior. Learn more: https://webpack.js.org/configuration/mode/
@@ -81,5 +81,6 @@ You can also set it to 'none' to disable any default behavior. Learn more: https
 
 Bài viết đến đây là hết, hi vọng với bài viết này các bạn đã thêm được nhiều kiến thức bổ ích. Hẹn gặp lại các bạn ở bài viết tiếp theo!
 
-* Tham khảo thêm về chế độ development tại: https://webpack.js.org/guides/development/
-* Sourcode github: https://github.com/kentrung/webpack-tutorial
+* Tham khảo thêm tại: https://webpack.js.org/guides/development/
+* Source code github: https://github.com/kentrung/webpack-tutorial
+* Series webpack: https://viblo.asia/s/webpack-tu-a-den-a-cung-kentrung-pmleB8Am5rd
