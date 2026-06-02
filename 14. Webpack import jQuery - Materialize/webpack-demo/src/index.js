@@ -1,4 +1,4 @@
-import 'materialize-css'
+require('materialize-css')
 
 $(document).ready(function(){
   $('.carousel').carousel()
