@@ -1,8 +1,7 @@
-import 'bootstrap'
+const bootstrap = require('bootstrap')
 
-$(document).ready(function(){
-  $('.carousel').carousel({
-    interval: 1000,
-    ride: 'carousel'
-  })
+var myCarousel = document.querySelector('#myCarousel')
+var carousel = new bootstrap.Carousel(myCarousel, {
+  interval: 1000,
+  ride: true
 })
