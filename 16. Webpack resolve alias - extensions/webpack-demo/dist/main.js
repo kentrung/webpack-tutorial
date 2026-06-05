@@ -1,0 +1,1 @@
+(()=>{"use strict";const c=`Tổng của ${1} + ${2} = 3`;console.log(c)})();
