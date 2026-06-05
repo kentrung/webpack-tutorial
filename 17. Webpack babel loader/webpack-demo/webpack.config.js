@@ -1,8 +1,7 @@
 const path = require('path')
 
 module.exports = {
-  mode: 'development',
-  entry: './src/index.js',
+  entry: './src/pages/index.js',
   output: {
     filename: 'main.js',
     path: path.resolve(__dirname, 'dist')
@@ -10,13 +9,10 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.m?js$/,
-        exclude: /(node_modules|bower_components)/,
+        test: /\.js$/,
+        exclude: /node_modules/,
         use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env']
-          }
+          loader: 'babel-loader'
         }
       }
     ]
