@@ -10,12 +10,8 @@ module.exports = {
     rules: [
       {
         test: /\.(png|jpg|gif)$/i,
-        use: [
-          {
-            loader: 'url-loader'
-          },
-        ],
-      },
-    ],
-  },
+        type: 'asset/inline'
+      }
+    ]
+  }
 }
